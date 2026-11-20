@@ -1,0 +1,19 @@
+[package]
+name = "studio-server"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+axum = "=0.8.9"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+sqlx = { version = "0.8", features = ["runtime-tokio", "postgres", "uuid", "time"] }
+tower-http = { version = "0.6", features = ["cors"] }
+uuid = { version = "1.29.3", features = ["v7", "serde"] }
+time = { version = "0.3.55", features = ["formatting"] }
+studio-core = { path = "../studio-core" }
+
+[dev-dependencies]
+tower = { version = "0.5.3", features = ["util"] }

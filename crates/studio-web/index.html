@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danh mục game</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --line: #d9d1c3;
+      --paper: #f6f1e8;
+      --card: #fffdf8;
+      --accent: #0f6e56;
+      --accent-ink: #ffffff;
+      --warn: #8a2e24;
+      --warn-bg: #f8e8e4;
+      --selected: #e5f3ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.45 "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    main { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
+    h1 { font-size: 1.6rem; margin: 0 0 16px; }
+    h2 { font-size: 1.1rem; margin: 0 0 12px; }
+    section, .banner {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .error { border-color: var(--warn); background: var(--warn-bg); color: var(--warn); }
+    form, .filters { display: grid; gap: 12px; }
+    label { display: grid; gap: 4px; font-size: 0.92rem; color: var(--muted); }
+    input, select, button {
+      font: inherit;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+    button {
+      background: var(--accent);
+      color: var(--accent-ink);
+      border-color: var(--accent);
+      cursor: pointer;
+      width: fit-content;
+    }
+    button.ghost {
+      background: transparent;
+      color: var(--accent);
+    }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-weight: 600; }
+    tbody tr { cursor: pointer; }
+    tbody tr:hover, tr.selected { background: var(--selected); }
+    .empty { color: var(--muted); margin: 0; }
+    dl { display: grid; grid-template-columns: 140px 1fr; gap: 8px 12px; margin: 0 0 16px; }
+    dt { color: var(--muted); }
+    dd { margin: 0; }
+    .stage-edit { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; }
+    .placeholders { display: grid; gap: 8px; margin-top: 16px; color: var(--muted); }
+    a { color: var(--accent); }
+    @media (max-width: 640px) {
+      dl { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <script type="module">
+    import init from "./studio_web.js";
+    await init();
+  </script>
+</body>
+</html>

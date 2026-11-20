@@ -1,0 +1,17 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/studio-core",
+    "crates/studio-server",
+    "crates/studio-web",
+]
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.85"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"

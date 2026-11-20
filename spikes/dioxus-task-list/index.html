@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dioxus 0.7.10 task list</title>
+  <style>
+    body { font: 14px/1.4 sans-serif; margin: 12px; }
+    .viewport { height: 640px; overflow: auto; border: 1px solid #888; }
+    .row { height: 32px; box-sizing: border-box; display: flex; align-items: center; border-bottom: 1px solid #eee; }
+    .row span { width: 33%; padding: 0 8px; overflow: hidden; white-space: nowrap; }
+    #toggle { margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+  <script type="module">
+    import init from "./dioxus_task_list.js";
+    await init();
+  </script>
+</body>
+</html>

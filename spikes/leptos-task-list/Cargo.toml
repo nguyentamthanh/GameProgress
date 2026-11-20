@@ -1,0 +1,24 @@
+[package]
+name = "leptos-task-list"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Own workspace so this spike does not inherit the repo root.
+[workspace]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+console_error_panic_hook = "0.1.7"
+leptos = { version = "=0.8.23", features = ["csr"] }
+wasm-bindgen = "0.2"
+web-sys = { version = "0.3", features = ["Window", "Performance", "Element", "Event", "EventTarget", "console"] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
